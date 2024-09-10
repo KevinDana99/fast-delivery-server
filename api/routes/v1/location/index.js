@@ -8,4 +8,7 @@ const router = express_1.default.Router();
 router.get("/location", (_, res) => {
     return res.status(200).json({ status: "ok" });
 });
+router.get("/location/:id", (req, res) => {
+    return res.status(200).json({ id: req.params.id });
+});
 exports.default = router;
