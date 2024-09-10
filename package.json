@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node ./api/index.ts",
+    "dev": "npm run tsc && nodemon build/index.js",
     "tsc": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
