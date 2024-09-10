@@ -1,6 +1,6 @@
 import express from "express";
-import Api from "./routes";
-import { PORT } from "./constants";
+import Api from "./api/routes";
+import { PORT } from "./api/constants";
 
 const server = express();
 
