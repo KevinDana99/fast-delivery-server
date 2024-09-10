@@ -7,6 +7,8 @@ const server = express();
 server.use(express.json());
 Api(server);
 
-export default server.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`server on port ${PORT}`);
 });
+
+export default server;
