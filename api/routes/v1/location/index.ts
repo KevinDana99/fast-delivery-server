@@ -10,7 +10,8 @@ router.get("/location/all", (_, res) => {
 });
 
 router.get("/location/:id", (req, res) => {
-  return res.status(200).json({ id: req.params.id });
+  const id = parseInt(req.params.id);
+  return res.status(200).json(["location", "location2", "location3"][id]);
 });
 
 export default router;

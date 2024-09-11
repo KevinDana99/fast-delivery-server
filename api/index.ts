@@ -1,13 +1,14 @@
 import express from "express";
-import Api from "./routes";
+import api from "./routes";
 import { PORT } from "./constants";
+import { handleWebSocketsConnection } from "./sockets";
 
-const server = express();
+const app = express();
+app.use(express.json());
+handleWebSocketsConnection(app);
+api(app);
 
-server.use(express.json());
-Api(server);
-
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log("server on port " + PORT);
 });
-export default server;
+export default app;
