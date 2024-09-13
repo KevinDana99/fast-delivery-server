@@ -6,6 +6,8 @@ export const handleWebSocketsConnection = (app: Express) => {
   const server = http.createServer(app);
   const wss = new WebSocket.Server({ server });
   wss.on("connection", (ws: WebSocket) => {
+    console.log("se detecto conexion");
     handleWebSocketLocation(ws, wss);
   });
+  return server;
 };

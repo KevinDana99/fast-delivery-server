@@ -5,7 +5,7 @@ const handleWebSocketLocation = (ws: WebSocket, wss: WebSocket.Server) => {
       const data = JSON.parse(message);
       if (data.type === "location") {
         console.log(
-          `Received location: Latitude ${data.latitude}, Longitude ${data.longitude}`
+          `Received location: Latitude ${data.lat}, Longitude ${data.lng}`
         );
         // Reenvía la ubicación a todos los clientes conectados
         wss.clients.forEach((client) => {
@@ -13,8 +13,8 @@ const handleWebSocketLocation = (ws: WebSocket, wss: WebSocket.Server) => {
             client.send(
               JSON.stringify({
                 type: "location",
-                lat: data.latitude,
-                lng: data.longitude,
+                lat: data.lat,
+                lng: data.lng,
               })
             );
           }
